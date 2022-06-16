@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="specs.InfoSpec" tests="2" skipped="0" failures="2" errors="0" timestamp="2022-06-16T15:21:23" hostname="Sivas-MacBook.local" time="2.64">
+<testsuite name="specs.InfoSpec" tests="2" skipped="0" failures="2" errors="0" timestamp="2022-06-16T21:56:41" hostname="Sivas-MacBook.local" time="2.419">
   <properties/>
-  <testcase name="Info Endpoint Get request [path: https://api.dexcom.com, #0]" classname="specs.InfoSpec" time="2.335">
+  <testcase name="Info Endpoint Get request [path: https://api.dexcom.com, #0]" classname="specs.InfoSpec" time="2.055">
     <failure message="Condition not satisfied:&#10;&#10;insulinFuond&#10;|&#10;false&#10;" type="org.spockframework.runtime.ConditionNotSatisfiedError">Condition not satisfied:
 
 insulinFuond
@@ -11,7 +11,7 @@ false
 	at specs.InfoSpec.Info Endpoint Get request(InfoSpec.groovy:89)
 </failure>
   </testcase>
-  <testcase name="Info Endpoint Get request [path: https://sandbox-api.dexcom.com, #1]" classname="specs.InfoSpec" time="0.297">
+  <testcase name="Info Endpoint Get request [path: https://sandbox-api.dexcom.com, #1]" classname="specs.InfoSpec" time="0.343">
     <failure message="Condition not satisfied:&#10;&#10;insulinFuond&#10;|&#10;false&#10;" type="org.spockframework.runtime.ConditionNotSatisfiedError">Condition not satisfied:
 
 insulinFuond

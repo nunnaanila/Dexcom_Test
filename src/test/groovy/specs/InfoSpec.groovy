@@ -26,7 +26,7 @@ class InfoSpec extends Specification {
         assert headerCheck == "application/json"
 
 
-        when: "Verify Product Name"
+        when: "Look for Product Name"
         boolean productFound = false;
         for (apiRes in apiResponse) {
             if (apiRes.'Product Name' == 'Dexcom API') {
@@ -35,7 +35,7 @@ class InfoSpec extends Specification {
             }
         }
 
-        then: "Product Name is found"
+        then: "Verify Product Name is found or not"
         assert productFound
 
         when: "Look for Device ID"
@@ -43,27 +43,27 @@ class InfoSpec extends Specification {
         if (dexCmApiFoundRes.'UDI / Device Identifier' == '00386270000668')
             deviceNumberFound = true;
 
-        then: "Device ID found"
+        then: "Verfification for Device ID"
         assert deviceNumberFound
 
 
-        when: "Check for Version"
+        when: "Look for Version"
         def status
         if (dexCmApiFoundRes.'UDI / Production Identifier'.'Version' == '3.1.0.0')
             status = "Versin found"
         else
             status = "Version not found"
 
-        then: "Version matched"
+        then: "Verification for Version matched or not"
         println status
 
-        when: "Check for Part Number"
+        when: "Look for Part Number"
         def udiPN = dexCmApiFoundRes.'UDI / Production Identifier'
 
-        then: "Part Number found"
+        then: "Verify for Part Number found or not"
         assert udiPN.'Part Number (PN)' == '350-0019'
 
-        when: "Check for Name under Sub-components list"
+        when: "Look for Name under Sub-components list"
         subComps = dexCmApiFoundRes.'UDI / Production Identifier'.'Sub-Components';
         boolean apiGatewayfound = false;
         for (subComp in subComps) {
@@ -72,10 +72,10 @@ class InfoSpec extends Specification {
                 break;
             }
         }
-        then: "Correct Name found"
+        then: "Verify whether api-gateway found or not"
         assert apiGatewayfound
 
-        when: "Check for Insulin service under sub components list"
+        when: "Look for Insulin service under sub components list"
         subComps = dexCmApiFoundRes.'UDI / Production Identifier'.'Sub-Components';
         boolean insulinFuond = false;
         for (subComp in subComps) {
@@ -85,7 +85,7 @@ class InfoSpec extends Specification {
             }
         }
 
-        then: "Check for NAme"
+        then: "Verify whether Insulin service found or not"
         assert insulinFuond;
 
         where:
